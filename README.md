@@ -8,9 +8,12 @@ MQTT starter for Spring Boot, easier to use.
 
 ## 0. 修改记录
 
+2024-06-06 `v1.4.0`
+1. 主开关由disable修改为enabled，默认为false
+2. `@MqttSubscribe` 注解的group添加嵌入参数支持
+
 2023-03-16 `v1.3.0`
 1. `@MqttSubscribe` 注解添加嵌入参数支持（只有topic和client生效，详见`MqttSubscriber#afterInit`） #14, #15
-
 
 2022-11-23 `v1.2.8.1`
 1. fix bug #19
@@ -26,9 +29,9 @@ MQTT starter for Spring Boot, easier to use.
 
 ```xml
 <dependency>
-    <groupId>com.github.tocrhz</groupId>
+    <groupId>io.github.lonwern</groupId>
     <artifactId>mqtt-spring-boot-starter</artifactId>
-    <version>1.2.8.1</version>
+    <version>1.4.0</version>
 </dependency>
 ```
 
@@ -41,6 +44,7 @@ e.g.
 
 ```properties
 
+mqtt.enabled=true
 mqtt.uri=tcp://127.0.0.1:1883
 mqtt.client-id=default_client
 mqtt.username=username

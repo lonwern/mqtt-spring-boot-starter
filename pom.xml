@@ -7,9 +7,9 @@
         <artifactId>oss-parent</artifactId>
         <version>9</version>
     </parent>
-    <groupId>com.github.tocrhz</groupId>
+    <groupId>io.github.lonwern</groupId>
     <artifactId>mqtt-spring-boot-starter</artifactId>
-    <version>1.3.0</version>
+    <version>1.4.0</version>
     <name>mqtt-spring-boot-starter</name>
     <description>MQTT starter for Spring Boot, easier to use.</description>
 
@@ -22,20 +22,28 @@
 
     <developers>
         <developer>
-            <name>tocrhz</name>
-            <url>https://github.com/tocrhz/</url>
-            <email>812121600@qq.com</email>
+            <name>lonwern</name>
+            <url>https://github.com/lonwern</url>
+            <email>lonwern@qq.com</email>
             <roles>
                 <role>developer</role>
                 <role>admin</role>
             </roles>
         </developer>
+        <developer>
+            <name>tocrhz</name>
+            <url>https://github.com/tocrhz</url>
+            <email>812121600@qq.com</email>
+            <roles>
+                <role>developer</role>
+            </roles>
+        </developer>
     </developers>
 
     <scm>
-        <connection>scm:https://github.com/tocrhz/mqtt-spring-boot-starter</connection>
-        <developerConnection>scm:https://github.com/tocrhz/mqtt-spring-boot-starter</developerConnection>
-        <url>https://github.com/tocrhz/mqtt-spring-boot-starter</url>
+        <connection>scm:https://github.com/lonwern/mqtt-spring-boot-starter</connection>
+        <developerConnection>scm:https://github.com/lonwern/mqtt-spring-boot-starter</developerConnection>
+        <url>https://github.com/lonwern/mqtt-spring-boot-starter</url>
     </scm>
 
     <properties>
