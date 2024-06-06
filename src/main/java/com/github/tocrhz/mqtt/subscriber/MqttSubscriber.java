@@ -60,6 +60,10 @@ public class MqttSubscriber {
             for (int i = 0; i < value.length; i++) {
                 value[i] = function.apply(value[i]);
             }
+            String[] groups = subscribe.groups();
+            for (int i = 0; i < groups.length; i++) {
+                groups[i] = function.apply(groups[i]);
+            }
         }
 
         HashMap<String, Class<?>> paramTypeMap = new HashMap<>();
