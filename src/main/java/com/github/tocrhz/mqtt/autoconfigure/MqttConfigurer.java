@@ -28,12 +28,16 @@ public abstract class MqttConfigurer {
 
     /**
      * 在处理注解内参数之前.
+     *
+     * @param subscribers subscribers
      */
     public void beforeResolveEmbeddedValue(LinkedList<MqttSubscriber> subscribers) {
     }
 
     /**
      * 在处理注解内参数之后.
+     *
+     * @param subscribers subscribers
      */
     public void afterResolveEmbeddedValue(LinkedList<MqttSubscriber> subscribers) {
     }
