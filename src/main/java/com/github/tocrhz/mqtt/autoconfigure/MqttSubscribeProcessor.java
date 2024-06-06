@@ -24,12 +24,12 @@ public class MqttSubscribeProcessor implements BeanPostProcessor {
     // subscriber cache
     static final LinkedList<MqttSubscriber> SUBSCRIBERS = new LinkedList<>();
 
-    @Value("${mqtt.disable:false}")
-    private Boolean disable;
+    @Value("${mqtt.enabled:false}")
+    private Boolean enabled;
 
     @Override
     public Object postProcessBeforeInitialization(Object bean, String beanName) throws BeansException {
-        if (disable == null || !disable) {
+        if (enabled != null && enabled) {
             Method[] methods = bean.getClass().getMethods();
             for (Method method : methods) {
                 if (method.isAnnotationPresent(MqttSubscribe.class)) {

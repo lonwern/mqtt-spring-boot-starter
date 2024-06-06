@@ -18,9 +18,9 @@ import java.util.function.BiConsumer;
 @ConfigurationProperties(prefix = "mqtt")
 public class MqttProperties extends ConnectionProperties {
     /**
-     * 是否禁用
+     * 是否启用
      */
-    private Boolean disable = false;
+    private Boolean enabled = false;
 
     /**
      * 多个客户端配置, key:clientId, value:配置
@@ -28,16 +28,16 @@ public class MqttProperties extends ConnectionProperties {
     private Map<String, ConnectionProperties> clients = new LinkedHashMap<>();
 
     /**
-     * 是否禁用
+     * 是否启用
      *
      * @return Boolean
      */
-    public Boolean getDisable() {
-        return disable;
+    public Boolean getEnabled() {
+        return enabled;
     }
 
-    public void setDisable(Boolean disable) {
-        this.disable = disable;
+    public void setEnabled(Boolean enabled) {
+        this.enabled = enabled;
     }
 
     /**

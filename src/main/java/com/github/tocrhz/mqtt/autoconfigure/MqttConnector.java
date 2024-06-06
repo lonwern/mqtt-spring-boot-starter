@@ -70,7 +70,7 @@ public class MqttConnector implements DisposableBean {
     private MqttConfigurer adapter;
 
     public void start(MqttProperties properties, MqttConfigurer adapter) {
-        if (properties.getDisable() == null || !properties.getDisable()) {
+        if (properties.getEnabled() != null && properties.getEnabled()) {
             adapter.setProperties(properties);
             // sort subscribe by order.
             MqttSubscribeProcessor.SUBSCRIBERS.sort(Comparator.comparingInt(MqttSubscriber::getOrder));

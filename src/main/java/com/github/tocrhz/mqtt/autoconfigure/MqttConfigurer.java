@@ -78,7 +78,7 @@ public abstract class MqttConfigurer {
          * @return ClientRegistry
          */
         public ClientRegistry disable() {
-            mqttProperties.setDisable(true);
+            mqttProperties.setEnabled(false);
             return this;
         }
 
