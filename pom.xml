@@ -9,7 +9,7 @@
     </parent>
     <groupId>io.github.lonwern</groupId>
     <artifactId>mqtt-spring-boot-starter</artifactId>
-    <version>1.4.0</version>
+    <version>1.5.0</version>
     <name>mqtt-spring-boot-starter</name>
     <description>MQTT starter for Spring Boot, easier to use.</description>
 

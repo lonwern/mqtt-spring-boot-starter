@@ -8,6 +8,9 @@ MQTT starter for Spring Boot, easier to use.
 
 ## 0. 修改记录
 
+2024-07-06 `v1.5.0`
+1. `@MqttSubscribe` 注解的方法支持添加其他AOP注解，如`@Transactional`、`@Async`等
+
 2024-06-06 `v1.4.0`
 1. 主开关由disable修改为enabled，默认为false
 2. `@MqttSubscribe` 注解的group添加嵌入参数支持
@@ -31,7 +34,7 @@ MQTT starter for Spring Boot, easier to use.
 <dependency>
     <groupId>io.github.lonwern</groupId>
     <artifactId>mqtt-spring-boot-starter</artifactId>
-    <version>1.4.0</version>
+    <version>1.5.0</version>
 </dependency>
 ```
 

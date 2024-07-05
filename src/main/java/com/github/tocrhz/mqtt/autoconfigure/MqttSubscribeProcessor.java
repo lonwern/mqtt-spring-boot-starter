@@ -7,6 +7,7 @@ import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.beans.factory.config.BeanPostProcessor;
 import org.springframework.stereotype.Component;
+import org.springframework.util.ClassUtils;
 
 import java.lang.reflect.Method;
 import java.util.LinkedList;
@@ -28,9 +29,9 @@ public class MqttSubscribeProcessor implements BeanPostProcessor {
     private Boolean enabled;
 
     @Override
-    public Object postProcessBeforeInitialization(Object bean, String beanName) throws BeansException {
+    public Object postProcessAfterInitialization(Object bean, String beanName) throws BeansException {
         if (enabled != null && enabled) {
-            Method[] methods = bean.getClass().getMethods();
+            Method[] methods = ClassUtils.getUserClass(bean).getMethods();
             for (Method method : methods) {
                 if (method.isAnnotationPresent(MqttSubscribe.class)) {
                     SubscriberModel model = SubscriberModel.of(method.getAnnotation(MqttSubscribe.class));
@@ -38,11 +39,6 @@ public class MqttSubscribeProcessor implements BeanPostProcessor {
                 }
             }
         }
-        return bean;
-    }
-
-    @Override
-    public Object postProcessAfterInitialization(Object bean, String beanName) throws BeansException {
         return bean;
     }
 }

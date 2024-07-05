@@ -76,7 +76,7 @@ public class MqttAutoConfiguration {
         }
         configurer.afterResolveEmbeddedValue(MqttSubscribeProcessor.SUBSCRIBERS);
         MqttConnector connector = new MqttConnector();
-        connector.start(properties, configurer);
+        connector.init(properties, configurer);
         return connector;
     }
 }

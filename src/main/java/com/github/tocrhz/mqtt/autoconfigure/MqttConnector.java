@@ -10,6 +10,7 @@ import org.springframework.beans.factory.DisposableBean;
 import org.springframework.util.Assert;
 import org.springframework.util.StringUtils;
 
+import javax.annotation.PostConstruct;
 import java.util.*;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
@@ -69,7 +70,7 @@ public class MqttConnector implements DisposableBean {
     private MqttProperties properties;
     private MqttConfigurer adapter;
 
-    public void start(MqttProperties properties, MqttConfigurer adapter) {
+    public void init(MqttProperties properties, MqttConfigurer adapter) {
         if (properties.getEnabled() != null && properties.getEnabled()) {
             adapter.setProperties(properties);
             // sort subscribe by order.
@@ -77,14 +78,14 @@ public class MqttConnector implements DisposableBean {
             // create clients
             this.properties = properties;
             this.adapter = adapter;
-            this.connect();
         }
     }
 
     /**
      * 根据配置建立连接.
      */
-    public void connect() {
+    @PostConstruct
+    public void start() {
         connect(false);
     }
 
